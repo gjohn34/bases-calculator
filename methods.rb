@@ -1,7 +1,4 @@
 #//////////////////////////////////////////////////////////
-# => LIBRARY OF VALUES
-
-#//////////////////////////////////////////////////////////
 # => USER INPUT
 
 def get_value
@@ -124,9 +121,3 @@ def convert_from_above_ten_base_to_to_base(split_value_array_string, from_base, 
   sum = get_sum_value_array(decimal_array_integer)
   divide_new_value_by_to_base(sum, to_base, library)
 end
-
-
-#multiply element values with base from
-#sum
-#to convert to to_base
-  #divide sum by to_base values
