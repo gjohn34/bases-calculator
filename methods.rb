@@ -21,8 +21,9 @@ def get_split_value_array_string(value_array_string)
   return value_array_string.split('')
 end
 
-def is_possible?(value_array_string, from_base)
-  for number in value_array_string
+def is_possible?(value_array_string, from_base, library)
+  decimal_value_of_hex_string = get_decimal_value_of_hex_strings(value_array_string, library)
+  for number in decimal_value_of_hex_string
     if number.to_i >= from_base
       return false
     end
@@ -62,7 +63,6 @@ def divide_new_value_by_to_base(sum_value_of_array, to_base, library)
   value_array_string.push(copy_of_sum_value_of_array)
   value_array_string = value_array_string.reverse
   if to_base > 10
-    puts 'greater than 10'
     return convert_to_above_ten_base(value_array_string, to_base, library)
   else
     return to_base_array_as_integer = value_array_string.join
@@ -71,7 +71,6 @@ end
 
 def convert_to_above_ten_base(value_array_string, to_base, library)
   decimal_value_array_string = []
-  puts value_array_string
   for element in value_array_string
     for symbol in library
       if element == library.index(symbol)
@@ -92,7 +91,7 @@ end
 #/////////////////////////////////////////////////////////
 # => CONVERTING HEXADECIMAL TO DECIMAL THEN CONVERTING TO CHOSEN BASE
 
-def get_decimal_value_of_hex_strings(split_value_array_string, library = rosetta_stone)
+def get_decimal_value_of_hex_strings(split_value_array_string, library)
   decimal_value_array_string = []
   for element in split_value_array_string
     for symbol in library

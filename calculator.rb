@@ -11,7 +11,7 @@ def calculator(rosetta_stone)
   from_base = get_from_base
   to_base = get_to_base
   split_value_array_string = get_split_value_array_string(value)
-  possible = is_possible?(split_value_array_string, from_base)
+  possible = is_possible?(split_value_array_string, from_base, rosetta_stone)
   raise_error(possible, value, from_base)
 
   from_base <= 10 ? convert_from_below_ten_to_new_base(split_value_array_string, from_base, to_base, rosetta_stone)
